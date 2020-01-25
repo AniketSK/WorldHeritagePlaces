@@ -66,7 +66,7 @@ class JsonPagedDataSource(private val heritageListLoader: IHeritageListLoader) :
         params: LoadInitialParams,
         callback: LoadInitialCallback<HeritagePlace>
     ) {
-        assert(params.placeholdersEnabled == false) { "This class has not implemented placeholder support yet" }
+        assert(!params.placeholdersEnabled) { "This class has not implemented placeholder support yet" }
 
         Timber.w("Note params.requestedStartPosition is not handled, always beginning from index 0")
         disposable.add(
