@@ -9,7 +9,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class JsonPagedDataSource(private val heritageListLoader: HeritageListLoader) :
+class JsonPagedDataSource(private val heritageListLoader: IHeritageListLoader) :
     PositionalDataSource<HeritagePlace>() {
 
     private val disposable = CompositeDisposable()

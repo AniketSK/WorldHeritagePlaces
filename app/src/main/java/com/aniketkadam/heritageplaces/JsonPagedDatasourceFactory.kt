@@ -3,7 +3,7 @@ package com.aniketkadam.heritageplaces
 import androidx.paging.DataSource
 import com.aniketkadam.heritageplaces.data.HeritagePlace
 
-class JsonPagedDatasourceFactory(heritageListLoader: HeritageListLoader) :
+class JsonPagedDatasourceFactory(heritageListLoader: IHeritageListLoader) :
     DataSource.Factory<Int, HeritagePlace>() {
     private val source by lazy {
         JsonPagedDataSource(heritageListLoader)
