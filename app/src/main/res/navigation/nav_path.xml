@@ -13,10 +13,17 @@
         <action
             android:id="@+id/action_loadingFragment_to_heritageList"
             app:destination="@id/heritageList" />
+        <action
+            android:id="@+id/action_loadingFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
     </fragment>
     <fragment
         android:id="@+id/heritageList"
         android:name="com.aniketkadam.heritageplaces.heritageplacelist.HeritageList"
         android:label="layout_heritage_list"
         tools:layout="@layout/layout_heritage_list" />
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.aniketkadam.heritageplaces.errorscreen.ErrorFragment"
+        android:label="ErrorFragment" />
 </navigation>
