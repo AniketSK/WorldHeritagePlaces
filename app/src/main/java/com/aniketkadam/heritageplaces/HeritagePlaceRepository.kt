@@ -15,6 +15,7 @@ class HeritagePlaceRepository @Inject constructor(private val heritageListLoader
         val localSource = JsonPagedDatasourceFactory(heritageListLoader)
 
         val config = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
             .setPageSize(PAGE_SIZE)
             .setMaxSize(PAGE_SIZE + 2 * PREFETCH_DISTANCE) // The recommended default
             .build()
