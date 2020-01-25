@@ -54,4 +54,27 @@ class JsonPagedDataSourceTest {
             equalTo(listOf(3, 2, 1, 29))
         ) // Checking only the ids instead of entire objects for brevity
     }
+
+    @Test
+    fun `load range works as expected`() {
+        // 3,2,1,29,26,4,27,24,18 are the ids in the list, from the start
+
+        val params = PositionalDataSource.LoadRangeParams(5, 4)
+        var result: MutableList<HeritagePlace>? = null
+        jsonPagedDataSource.loadRange(
+            params,
+            object : PositionalDataSource.LoadRangeCallback<HeritagePlace>() {
+                /**
+                 * Called to pass loaded data from [.loadRange].
+                 *
+                 * @param data List of items loaded from the DataSource. Must be same size as requested,
+                 * unless at end of list.
+                 */
+                override fun onResult(data: MutableList<HeritagePlace>) {
+                    result = data
+                }
+            })
+
+        assertThat(result?.map { it.id }, equalTo(listOf(4, 27, 24, 18)))
+    }
 }
