@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainVm : ViewModel() {
+class MainVm(repository: HeritagePlaceRepository) : ViewModel() {
 
     private val _viewState: MutableLiveData<ScreenLce> = MutableLiveData(ScreenLce.Loading)
 
