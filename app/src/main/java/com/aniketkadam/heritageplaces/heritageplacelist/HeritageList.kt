@@ -4,10 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.aniketkadam.heritageplaces.MainVm
 import com.aniketkadam.heritageplaces.R
+import com.aniketkadam.heritageplaces.di.MAINACTIVITY_FRAGMENT_VM
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
+import javax.inject.Named
 
-class HeritageList : Fragment() {
+class HeritageList : DaggerFragment() {
+
+    @Inject
+    @field:Named(MAINACTIVITY_FRAGMENT_VM)
+    lateinit var mainVm: MainVm
 
     override fun onCreateView(
         inflater: LayoutInflater,

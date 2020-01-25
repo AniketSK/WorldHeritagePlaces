@@ -1,9 +1,16 @@
 package com.aniketkadam.heritageplaces
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.aniketkadam.heritageplaces.di.MAINACTIVITY_VM
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
+import javax.inject.Named
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
+
+    @Inject
+    @field:Named(MAINACTIVITY_VM)
+    lateinit var mainVm: MainVm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
