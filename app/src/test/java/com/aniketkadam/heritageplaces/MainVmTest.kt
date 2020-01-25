@@ -1,6 +1,7 @@
 package com.aniketkadam.heritageplaces
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.aniketkadam.heritageplaces.data.HeritagePlace
 import com.jraska.livedata.test
 import org.junit.Before
 import org.junit.Rule
@@ -15,11 +16,13 @@ class MainVmTest {
 
     @Before
     fun setup() {
-        mainVm = MainVm()
+        mainVm = MainVm(HeritagePlaceRepository(object : IHeritageListLoader {
+            override val data: List<HeritagePlace> = emptyList()
+        }))
     }
 
     @Test
-    fun `the vm begins in a loading state`() {
-        mainVm.viewState.test().assertValue(ScreenLce.Loading)
+    fun `the vm executes a load and returns content`() {
+        mainVm.viewState.test().assertValue { it is ScreenLce.Content }
     }
 }
