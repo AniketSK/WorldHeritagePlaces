@@ -100,4 +100,6 @@ dependencies {
 
     testImplementation lifecycle.testhelper
     testImplementation room.test
+
+    testImplementation livedataCommunityTestHelper.lib
 }
