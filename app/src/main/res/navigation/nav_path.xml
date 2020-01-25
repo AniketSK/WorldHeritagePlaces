@@ -9,5 +9,14 @@
         android:id="@+id/loadingFragment"
         android:name="com.aniketkadam.heritageplaces.loadingscreen.LoadingFragment"
         android:label="layout_loading"
-        tools:layout="@layout/layout_loading" />
+        tools:layout="@layout/layout_loading">
+        <action
+            android:id="@+id/action_loadingFragment_to_heritageList"
+            app:destination="@id/heritageList" />
+    </fragment>
+    <fragment
+        android:id="@+id/heritageList"
+        android:name="com.aniketkadam.heritageplaces.heritageplacelist.HeritageList"
+        android:label="layout_heritage_list"
+        tools:layout="@layout/layout_heritage_list" />
 </navigation>
