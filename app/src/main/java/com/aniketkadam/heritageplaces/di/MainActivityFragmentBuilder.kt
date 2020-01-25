@@ -1,5 +1,6 @@
 package com.aniketkadam.heritageplaces.di
 
+import com.aniketkadam.heritageplaces.errorscreen.ErrorFragment
 import com.aniketkadam.heritageplaces.heritageplacelist.HeritageList
 import com.aniketkadam.heritageplaces.loadingscreen.LoadingFragment
 import dagger.Module
@@ -13,4 +14,7 @@ abstract class MainActivityFragmentBuilder {
 
     @ContributesAndroidInjector
     abstract fun bindHeritageListFragment(): HeritageList
+
+    @ContributesAndroidInjector
+    abstract fun bindErrorFragment(): ErrorFragment
 }
