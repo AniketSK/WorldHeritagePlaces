@@ -26,6 +26,7 @@ class HeritagePlaceTest {
             "  }"
 
     val expectedHeritagePlace = HeritagePlace(
+        3,
         "Aachen Cathedral ",
         "http://whc.unesco.org//uploads/thumbs/site_0003_0001-750-0-20131014170237.jpg",
         "Aachen Cathedral \n\nConstruction of this palatine chapel, with its octagonal basilica and cupola, began c. 790–800 under the Emperor Charlemagne. Originally inspired by the churches of the Eastern part of the Holy Roman Empire, it was splendidly enlarged in the Middle Ages. ",
