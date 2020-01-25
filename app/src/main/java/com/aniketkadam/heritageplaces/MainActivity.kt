@@ -33,6 +33,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
             ScreenLce.Error -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToErrorFragment())
 
+            is ScreenLce.Content -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToHeritageList())
         }
     }
 
