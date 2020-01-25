@@ -69,6 +69,11 @@ dependencies {
     implementation okhttp.lib
     implementation okhttp.interceptor
 
+    // Navigation
+    implementation navigation.runtime
+    implementation navigation.fragment
+    implementation navigation.ui
+
     // Image loading
     implementation glide.lib
 
