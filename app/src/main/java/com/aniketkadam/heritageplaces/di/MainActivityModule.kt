@@ -24,4 +24,5 @@ object MainActivityModule {
     @Named(MAINACTIVITY_FRAGMENT_VM)
     fun provideFragmentVm(mainActivity: MainActivity): MainVm =
         ViewModelProviders.of(mainActivity).get(MainVm::class.java)
+
 }

@@ -2,6 +2,7 @@ package com.aniketkadam.heritageplaces
 
 import androidx.paging.PositionalDataSource
 import com.aniketkadam.heritageplaces.data.HeritagePlace
+import com.google.gson.Gson
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
 import org.junit.Before
@@ -19,7 +20,12 @@ class JsonPagedDataSourceTest {
 
     @Before
     fun setUp() {
-        jsonPagedDataSource = JsonPagedDataSource(TestHeritageListLoader())
+        jsonPagedDataSource = JsonPagedDataSource(
+            HeritageListLoader(
+                ClassLoader.getSystemResourceAsStream("real.planet.world-heritage.json"),
+                Gson()
+            )
+        )
     }
 
     @Test
