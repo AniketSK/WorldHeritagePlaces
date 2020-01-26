@@ -39,3 +39,10 @@ There are also [tests](app/src/test/java/com/aniketkadam/heritageplaces/data/Her
 ### Other tests
 
 The [MainVm test](app/src/test/java/com/aniketkadam/heritageplaces/MainVmTest.kt) checks that content is eventually loaded into the view state.
+
+### Maps
+The [MapsFragment](app/src/main/java/com/aniketkadam/heritageplaces/maps/MapsFragment.kt) which extends the Google Maps api fragment, shows the location of Heritage Places.
+
+It starts with a fixed high zoom into the place which might make it a bit hard to notice with especially large areas like parks.
+
+The Navigation Architecture Component's safe args are used to pass the heritage place into the fragment, from which the location information and marker title are derived.  
