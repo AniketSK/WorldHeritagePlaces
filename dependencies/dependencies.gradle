@@ -63,6 +63,11 @@ ext {
             maps              : "17.0.0",
     ]
 
+    kotlinSerialization = [
+            runtime: "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0",
+            classpath : "org.jetbrains.kotlin:kotlin-serialization:${versions.kotlin}"
+    ]
+
     gPlayServices = [
             maps: "com.google.android.gms:play-services-maps:${versions.maps}"
     ]

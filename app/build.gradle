@@ -8,6 +8,9 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: "androidx.navigation.safeargs"
 
+apply plugin: 'kotlinx-serialization'
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -84,6 +87,9 @@ dependencies {
 
     // Image loading
     implementation glide.lib
+
+    // Serialization
+    implementation kotlinSerialization.runtime
 
     testImplementation mockito.lib
     testImplementation mockito.android
