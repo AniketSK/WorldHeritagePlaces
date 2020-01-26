@@ -37,6 +37,10 @@ The current implementation is what I'd do to execute the given techincal specifi
 
 For an open source project where I page an infinite list of items from the network into a database and then into a recyclerview, please look at https://github.com/AniketSK/Appod
 
+While a ViewPager could've been used, notably ViewPager2 is also implemented via a RecyclerView. I chose this for a better user experience than separate feeling pages that have to be swiped through.
+
+If a viewpager and distinct pages are indeed what's desired, please let me know and I'll do it that way. 
+
 ### Paging Implementation
 The first thing you'll notice, is that there aren't any separate screens for the page numbers.
 This is because while the data is incrementally loaded, the list remains the same.
