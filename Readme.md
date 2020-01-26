@@ -1,6 +1,16 @@
-### World Heritage Places [![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
+# Table of Contents:
+1. [Intro](#world-heritage-places)
+2. [Architecture](#architecture)
+3. [Assumptions](#assumptions)
+4. [Data Paging Implementation (also includes unit tests)](#paging-implementation)
+5. [UI Tests](#ui-tests)
+6. [Maps Implementation](#maps-implementation)
 
-The app shows a list of heritage places, with their images, their name and a short description.
+
+### World Heritage Places
+[![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
+
+The app shows a list of heritage places, with their images, their name and a short description. Clicking on an item, shows its location on a map.
 
 Data is incrementally loaded but serially displayed. I believe it's a good UX choice to not interrupt users scrolling infinitely through their data, while still batching and
 paging the load of that data.
@@ -36,11 +46,14 @@ To see another open source app, where I do incremental data load from the networ
 
 There are also [tests](app/src/test/java/com/aniketkadam/heritageplaces/data/HeritagePlaceTest.kt) to ensure serialization of data from json to objects works correctly.
 
-### Other tests
+### UI Tests
 
-The [MainVm test](app/src/test/java/com/aniketkadam/heritageplaces/MainVmTest.kt) checks that content is eventually loaded into the view state.
+The [MainVm test](app/src/test/java/com/aniketkadam/heritageplaces/MainVmTest.kt) checks that
+1. Content is eventually loaded into the view state.
+2. Content that needs to be paged in is eventually loaded.
+3. Clicking a place, opens its map.
 
-### Maps
+### Maps Implementation
 The [MapsFragment](app/src/main/java/com/aniketkadam/heritageplaces/maps/MapsFragment.kt) which extends the Google Maps api fragment, shows the location of Heritage Places.
 
 It starts with a fixed high zoom into the place which might make it a bit hard to notice with especially large areas like parks.
