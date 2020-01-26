@@ -12,7 +12,8 @@
         tools:layout="@layout/layout_loading">
         <action
             android:id="@+id/action_loadingFragment_to_heritageList"
-            app:destination="@id/heritageList" />
+            app:destination="@id/heritageList"
+            app:popUpTo="@+id/nav_path" />
         <action
             android:id="@+id/action_loadingFragment_to_errorFragment"
             app:destination="@id/errorFragment" />
