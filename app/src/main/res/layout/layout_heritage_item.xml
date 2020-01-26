@@ -27,12 +27,6 @@
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{place.name}"
-                tools:text="Example Name" />
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{place.shortInfo}"
