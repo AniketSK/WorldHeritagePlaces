@@ -34,7 +34,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
             ScreenLce.Error -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToErrorFragment())
 
-            is ScreenLce.Content -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToHeritageList())
+            is ScreenLce.HeritageListScreen -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToHeritageList())
 
             is ScreenLce.MapsMarker -> safeNavigate(
                 HeritageListDirections.actionHeritageListToMapsFragment(

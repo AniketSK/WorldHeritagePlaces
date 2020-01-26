@@ -13,7 +13,7 @@ class MainVm(repository: HeritagePlaceRepository) : ViewModel() {
     val viewState: LiveData<ScreenLce> = _viewState
 
     init {
-        _viewState.postValue(ScreenLce.Content(repository.getHeritagePlacesPagedAdapter()))
+        _viewState.postValue(ScreenLce.HeritageListScreen(repository.getHeritagePlacesPagedAdapter()))
     }
 
     fun openMapForPlace(place: HeritagePlace) = _viewState.postValue(ScreenLce.MapsMarker(place))
@@ -22,6 +22,7 @@ class MainVm(repository: HeritagePlaceRepository) : ViewModel() {
 sealed class ScreenLce {
     object Loading : ScreenLce()
     object Error : ScreenLce()
-    data class Content(val heritagePagedList: LiveData<PagedList<HeritagePlace>>) : ScreenLce()
+    data class HeritageListScreen(val heritagePagedList: LiveData<PagedList<HeritagePlace>>) :
+        ScreenLce()
     data class MapsMarker(val heritagePlace: HeritagePlace) : ScreenLce()
 }

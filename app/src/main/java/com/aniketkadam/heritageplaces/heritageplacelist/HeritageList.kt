@@ -42,7 +42,7 @@ class HeritageList : DaggerFragment() {
     }
 
     private fun renderState(viewState: ScreenLce?) {
-        if (viewState is ScreenLce.Content) {
+        if (viewState is ScreenLce.HeritageListScreen) {
             viewState.heritagePagedList.observe(viewLifecycleOwner, Observer { renderList(it) })
         }
     }

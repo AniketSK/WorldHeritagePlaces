@@ -23,6 +23,6 @@ class MainVmTest {
 
     @Test
     fun `the vm executes a load and returns content`() {
-        mainVm.viewState.test().assertValue { it is ScreenLce.Content }
+        mainVm.viewState.test().assertValue { it is ScreenLce.HeritageListScreen }
     }
 }
