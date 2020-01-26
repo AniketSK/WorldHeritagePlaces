@@ -1,4 +1,4 @@
-### World Heritage Places
+### World Heritage Places [![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
 
 The app shows a list of heritage places, with their images, their name and a short description.
 
