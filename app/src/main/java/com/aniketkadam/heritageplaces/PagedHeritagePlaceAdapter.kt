@@ -6,9 +6,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.aniketkadam.heritageplaces.data.HeritagePlace
-import com.aniketkadam.heritageplaces.databinding.LayoutHeritageItemBinding
 
-class PagedHeritagePlaceAdapter :
+class PagedHeritagePlaceAdapter(private val placeClickedHandler: (HeritagePlace) -> Unit) :
     PagedListAdapter<HeritagePlace, HeritageViewHolder>(DIFF_CALLBACK) {
 
     companion object {
@@ -27,12 +26,13 @@ class PagedHeritagePlaceAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeritageViewHolder =
         HeritageViewHolder(
-            DataBindingUtil.inflate<LayoutHeritageItemBinding>(
+            DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.layout_heritage_item,
                 parent,
                 false
-            )
+            ),
+            { clickedItemPosition -> placeClickedHandler(getItem(clickedItemPosition)!!) }
         )
 
     // As long as placeholders are NOT enabled, getItem would always return a value

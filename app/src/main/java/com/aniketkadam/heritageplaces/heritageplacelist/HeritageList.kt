@@ -23,7 +23,9 @@ class HeritageList : DaggerFragment() {
     @field:Named(MAINACTIVITY_FRAGMENT_VM)
     lateinit var mainVm: MainVm
 
-    private val adapter = PagedHeritagePlaceAdapter()
+    private val adapter by lazy {
+        PagedHeritagePlaceAdapter(mainVm::openMapForPlace)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

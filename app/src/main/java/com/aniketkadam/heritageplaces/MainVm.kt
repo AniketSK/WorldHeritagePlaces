@@ -15,6 +15,8 @@ class MainVm(repository: HeritagePlaceRepository) : ViewModel() {
     init {
         _viewState.postValue(ScreenLce.Content(repository.getHeritagePlacesPagedAdapter()))
     }
+
+    fun openMapForPlace(place: HeritagePlace) = _viewState.postValue(ScreenLce.MapsMarker(place))
 }
 
 sealed class ScreenLce {
