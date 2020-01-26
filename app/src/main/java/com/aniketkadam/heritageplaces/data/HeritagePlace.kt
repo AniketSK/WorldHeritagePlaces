@@ -1,12 +1,13 @@
 package com.aniketkadam.heritageplaces.data
 
-import kotlinx.serialization.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-@Serializable
+@Parcelize
 data class HeritagePlace(
     val id: Int,
     val name: String,
     val image: String,
     val shortInfo: String,
     val location: Location
-)
+) : Parcelable

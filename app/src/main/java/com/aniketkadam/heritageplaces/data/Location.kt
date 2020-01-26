@@ -1,9 +1,10 @@
 package com.aniketkadam.heritageplaces.data
 
-import kotlinx.serialization.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-@Serializable
+@Parcelize
 data class Location(
     val lat: Double,
     val lng: Double
-)
+) : Parcelable
