@@ -1,12 +1,13 @@
 # Table of Contents: [![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
 
 1. [Intro](#world-heritage-places)
-2. [Architecture](#architecture)
-3. [Assumptions](#assumptions)
-4. [Data Paging Implementation (also includes unit tests)](#paging-implementation)
-5. [UI Tests](#ui-tests)
-6. MainVM tests exist but the VM itself is incredibly concise, UI tests matter more here.
-6. [Maps Implementation](#maps-implementation)
+2. [Broken Image Links](#broken-image-links)
+3. [Architecture](#architecture)
+4. [Assumptions](#assumptions)
+5. [Data Paging Implementation (also includes unit tests)](#paging-implementation)
+6. [UI Tests](#ui-tests)
+7. MainVM tests exist but the VM itself is incredibly concise, UI tests matter more here.
+8. [Maps Implementation](#maps-implementation)
 
 Tap on an item in the table of contents, or scroll past the images to see a quick overview.
 
@@ -23,6 +24,12 @@ The app shows a list of heritage places, with their images, their name and a sho
 Data is incrementally loaded but serially displayed. I believe it's a good UX choice to not interrupt users scrolling infinitely through their data, while still batching and
 paging the load of that data.
 
+### Broken Image Links
+Glide will attempt to load the image, it will show:
+* A loading image.
+* If the image link is broken, as a lot of the unseco links are, this image will be shown ![broken file image](app/src/main/res/drawable-v24/broken_image.png | width=50)
+* If the image loads, then the image itself
+ 
 ### Architecture
 The app uses a hybrid MVVM-MVI architecture, with a shared viewmodel that's injected via Dagger into the Loading, Error and HeritageList fragments.
 
