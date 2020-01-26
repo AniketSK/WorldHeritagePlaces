@@ -32,20 +32,36 @@ class JsonPagedDataSource(private val heritageListLoader: IHeritageListLoader) :
         params: LoadRangeParams,
         callback: LoadRangeCallback<HeritagePlace>
     ) {
-        disposable.add(
-            Observable.just(params)
-                .map {
-                    heritageListLoader.data.subList(
-                        params.startPosition,
-                        params.startPosition + params.loadSize
-                    )
-                }
-                .subscribeOn(Schedulers.computation())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeBy {
-                    callback.onResult(it)
-                }
-        )
+
+        if (!isStartPositionValid(params)) {
+            callback.onResult(emptyList())
+        } else {
+            disposable.add(
+                Observable.just(params)
+                    .map(::returnParamsWithinRange)
+                    .map { heritageListLoader.data.subList(it.first, it.second) }
+                    .subscribeOn(Schedulers.computation())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy {
+                        callback.onResult(it)
+                    }
+            )
+        }
+    }
+
+    private fun isStartPositionValid(params: LoadRangeParams): Boolean =
+        params.startPosition < heritageListLoader.data.size
+
+    private fun returnParamsWithinRange(params: LoadRangeParams): Pair<Int, Int> {
+        val maxSize = heritageListLoader.data.size
+
+        var endPosition: Int = params.startPosition + params.loadSize
+
+        if (endPosition > maxSize) {
+            endPosition = maxSize
+        }
+
+        return Pair(params.startPosition, endPosition)
     }
 
     /**

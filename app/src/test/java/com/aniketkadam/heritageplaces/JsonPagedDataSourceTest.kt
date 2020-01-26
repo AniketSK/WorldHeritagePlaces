@@ -17,15 +17,16 @@ class JsonPagedDataSourceTest {
     val immediateScheduler = RxImmediateSchedulerRule()
 
     lateinit var jsonPagedDataSource: JsonPagedDataSource
+    var jsonPagedDataSourceSize: Int = 0
 
     @Before
     fun setUp() {
-        jsonPagedDataSource = JsonPagedDataSource(
-            HeritageListLoader(
-                ClassLoader.getSystemResourceAsStream("real.planet.world-heritage.json"),
-                Gson()
-            )
+        val loader = HeritageListLoader(
+            ClassLoader.getSystemResourceAsStream("real.planet.world-heritage.json"),
+            Gson()
         )
+        jsonPagedDataSourceSize = loader.data.size
+        jsonPagedDataSource = JsonPagedDataSource(loader)
     }
 
     @Test
@@ -82,5 +83,26 @@ class JsonPagedDataSourceTest {
             })
 
         assertThat(result?.map { it.id }, equalTo(listOf(4, 27, 24, 18)))
+    }
+
+    @Test
+    fun `load range works when more items are requested than exist`() {
+        val params = PositionalDataSource.LoadRangeParams(jsonPagedDataSourceSize - 1, 20)
+        var result: MutableList<HeritagePlace>? = null
+        jsonPagedDataSource.loadRange(
+            params,
+            object : PositionalDataSource.LoadRangeCallback<HeritagePlace>() {
+                /**
+                 * Called to pass loaded data from [.loadRange].
+                 *
+                 * @param data List of items loaded from the DataSource. Must be same size as requested,
+                 * unless at end of list.
+                 */
+                override fun onResult(data: MutableList<HeritagePlace>) {
+                    result = data
+                }
+            })
+
+        assertThat(result?.map { it.id }, equalTo(listOf(1474)))
     }
 }
