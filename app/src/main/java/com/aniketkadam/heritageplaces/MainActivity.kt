@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.aniketkadam.heritageplaces.di.MAINACTIVITY_VM
+import com.aniketkadam.heritageplaces.heritageplacelist.HeritageListDirections
 import com.aniketkadam.heritageplaces.loadingscreen.LoadingFragmentDirections
 import dagger.android.support.DaggerAppCompatActivity
 import timber.log.Timber
@@ -34,6 +35,12 @@ class MainActivity : DaggerAppCompatActivity() {
             ScreenLce.Error -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToErrorFragment())
 
             is ScreenLce.Content -> safeNavigate(LoadingFragmentDirections.actionLoadingFragmentToHeritageList())
+
+            is ScreenLce.MapsMarker -> safeNavigate(
+                HeritageListDirections.actionHeritageListToMapsFragment(
+                    viewState.heritagePlace
+                )
+            )
         }
     }
 

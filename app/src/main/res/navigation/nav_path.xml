@@ -33,5 +33,9 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.aniketkadam.heritageplaces.maps.MapsFragment"
-        android:label="MapsFragment" />
+        android:label="MapsFragment">
+        <argument
+            android:name="heritagePlace"
+            app:argType="com.aniketkadam.heritageplaces.data.HeritagePlace" />
+    </fragment>
 </navigation>

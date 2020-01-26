@@ -21,4 +21,5 @@ sealed class ScreenLce {
     object Loading : ScreenLce()
     object Error : ScreenLce()
     data class Content(val heritagePagedList: LiveData<PagedList<HeritagePlace>>) : ScreenLce()
+    data class MapsMarker(val heritagePlace: HeritagePlace) : ScreenLce()
 }
