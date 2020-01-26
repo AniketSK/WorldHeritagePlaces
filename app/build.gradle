@@ -75,12 +75,7 @@ dependencies {
     testImplementation paging.testing
 
     // Network
-    implementation retrofit.lib
-    implementation retrofit.adapters
-    implementation retrofit.gsonconverter
     implementation gson.lib
-    implementation okhttp.lib
-    implementation okhttp.interceptor
 
     // Navigation
     implementation navigation.runtime
@@ -89,14 +84,6 @@ dependencies {
 
     // Image loading
     implementation glide.lib
-
-    // Databases
-    // Room
-    implementation room.lib
-    kapt room.compiler
-    kaptAndroidTest room.compiler
-    implementation room.extensions
-    implementation room.rxjava
 
     testImplementation mockito.lib
     testImplementation mockito.android
