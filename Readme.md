@@ -27,7 +27,7 @@ paging the load of that data.
 ### Broken Image Links
 Glide will attempt to load the image, it will show:
 * A loading image.
-* If the image link is broken, as a lot of the unseco links are, this image will be shown ![broken file image](app/src/main/res/drawable-v24/broken_image.png | width=50)
+* If the image link is broken, as a lot of the unseco links are, this image will be shown <img src="app/src/main/res/drawable-v24/broken_image.png" width="48" alt="broken file image">
 * If the image loads, then the image itself
  
 ### Architecture
