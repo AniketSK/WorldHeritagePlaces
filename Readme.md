@@ -8,6 +8,8 @@
 6. MainVM tests exist but the VM itself is incredibly concise, UI tests matter more here.
 6. [Maps Implementation](#maps-implementation)
 
+Tap on an item in the table of contents, or scroll past the images to see a quick overview.
+
 List of Places   | Tapped Place on a Map
 :----------:|:--------------:
 The list that is shown once the data is loaded | Tapping an item opens it in an embedded map with a marker (tap the marker to show the name)
