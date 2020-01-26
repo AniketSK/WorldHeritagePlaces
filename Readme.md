@@ -41,7 +41,7 @@ For an open source project where I page an infinite list of items from the netwo
 The first thing you'll notice, is that there aren't any separate screens for the page numbers.
 This is because while the data is incrementally loaded, the list remains the same.
 
-*As the user scrolls, earlier pages of loaded items are thrown out of the pool. Only rows of 20 are kept.*
+**As the user scrolls, earlier pages of loaded items are thrown out of the pool. Only rows of 20 are kept.**
 
 This is achieved via the [PagedHeritagePlaceAdapter](app/src/main/java/com/aniketkadam/heritageplaces/PagedHeritagePlaceAdapter.kt).
 
