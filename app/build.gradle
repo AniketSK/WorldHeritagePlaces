@@ -110,4 +110,6 @@ dependencies {
     testImplementation room.test
 
     testImplementation livedataCommunityTestHelper.lib
+    androidTestImplementation adxTestLib.espressoContrib
+    androidTestImplementation lifecycle.testhelper
 }
