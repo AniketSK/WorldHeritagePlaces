@@ -21,9 +21,17 @@
         android:id="@+id/heritageList"
         android:name="com.aniketkadam.heritageplaces.heritageplacelist.HeritageList"
         android:label="layout_heritage_list"
-        tools:layout="@layout/layout_heritage_list" />
+        tools:layout="@layout/layout_heritage_list">
+        <action
+            android:id="@+id/action_heritageList_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/errorFragment"
         android:name="com.aniketkadam.heritageplaces.errorscreen.ErrorFragment"
         android:label="ErrorFragment" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.aniketkadam.heritageplaces.maps.MapsFragment"
+        android:label="MapsFragment" />
 </navigation>
