@@ -4,6 +4,7 @@
 3. [Assumptions](#assumptions)
 4. [Data Paging Implementation (also includes unit tests)](#paging-implementation)
 5. [UI Tests](#ui-tests)
+6. MainVM tests exist but the VM itself is incredibly concise, UI tests matter more here.
 6. [Maps Implementation](#maps-implementation)
 
 
@@ -46,9 +47,12 @@ To see another open source app, where I do incremental data load from the networ
 
 There are also [tests](app/src/test/java/com/aniketkadam/heritageplaces/data/HeritagePlaceTest.kt) to ensure serialization of data from json to objects works correctly.
 
+### MainVm Tests
+[MainVm test](app/src/test/java/com/aniketkadam/heritageplaces/MainVmTest.kt) makes sure the content is loaded when the vm is launched.
+
 ### UI Tests
 
-The [MainVm test](app/src/test/java/com/aniketkadam/heritageplaces/MainVmTest.kt) checks that
+The [MainActivityTest](app/src/androidTest/java/com/aniketkadam/heritageplaces/MainActivityTest.kt) checks that
 1. Content is eventually loaded into the view state.
 2. Content that needs to be paged in is eventually loaded.
 3. Clicking a place, opens its map.
