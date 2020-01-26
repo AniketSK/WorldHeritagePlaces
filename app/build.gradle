@@ -51,6 +51,7 @@ dependencies {
     implementation androidxDependencies.appCompat
     implementation ktxdep.lib
     implementation adxconstraintlayout.lib
+    implementation gPlayServices.maps
     testImplementation 'junit:junit:4.12'
     androidTestImplementation adxTestLib.rules
     androidTestImplementation adxTestLib.testext
