@@ -1,4 +1,5 @@
-# Table of Contents:
+# Table of Contents: [![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
+
 1. [Intro](#world-heritage-places)
 2. [Architecture](#architecture)
 3. [Assumptions](#assumptions)
@@ -7,9 +8,13 @@
 6. MainVM tests exist but the VM itself is incredibly concise, UI tests matter more here.
 6. [Maps Implementation](#maps-implementation)
 
+List of Places   | Tapped Place on a Map
+:----------:|:--------------:
+The list that is shown once the data is loaded | Tapping an item opens it in an embedded map with a marker (tap the marker to show the name)
+![Two places shown in a list](docs_images/list_image.png) | ![Map marker of the location shown in embedded google maps](docs_images/map_image.png)
+
 
 ### World Heritage Places
-[![Build Status](https://app.bitrise.io/app/4ffbece3c9836f15/status.svg?token=CZumB7znCgluERbx0yUG4Q&branch=master)](https://app.bitrise.io/app/4ffbece3c9836f15)
 
 The app shows a list of heritage places, with their images, their name and a short description. Clicking on an item, shows its location on a map.
 
