@@ -6,8 +6,9 @@
     android:gravity="center"
     tools:context=".loadingscreen.LoadingFragment">
 
-    <Spinner
+    <ProgressBar
         android:id="@+id/spinner"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:indeterminate="true"
         android:layout_height="wrap_content" />
 </LinearLayout>
