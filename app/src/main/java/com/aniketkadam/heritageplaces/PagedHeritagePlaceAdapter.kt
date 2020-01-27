@@ -31,9 +31,8 @@ class PagedHeritagePlaceAdapter(private val placeClickedHandler: (HeritagePlace)
                 R.layout.layout_heritage_item,
                 parent,
                 false
-            ),
-            { clickedItemPosition -> placeClickedHandler(getItem(clickedItemPosition)!!) }
-        )
+            )
+        ) { clickedItemPosition -> placeClickedHandler(getItem(clickedItemPosition)!!) }
 
     // As long as placeholders are NOT enabled, getItem would always return a value
     override fun onBindViewHolder(holder: HeritageViewHolder, position: Int) =
